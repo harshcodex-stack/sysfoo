@@ -54,7 +54,7 @@ mvn versions:commit'''
             script {
               docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
                 def commitHash = env.GIT_COMMIT.take(7)
-                def dockerImage = docker.build("lslzabbix/sysfoo:${commitHash}", "./")
+                def dockerImage = docker.build("harshaa875/sysfoo:${commitHash}", "./")
                 dockerImage.push()
                 dockerImage.push("latest")
                 dockerImage.push("dev")
